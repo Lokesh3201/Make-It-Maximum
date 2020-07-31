@@ -1,0 +1,84 @@
+/*let globalLet = "This is a global variable";
+
+function fun() {
+let localLet = "This is a local variable";
+
+console.log(globalLet); // This is a global variable
+console.log(localLet); // This is a local variable
+}
+fun();
+
+var lok=5;
+if (lok>4) {
+  console.log("hii")
+  document.getElementById("outpt").innerHTML = lok;
+}
+else {
+  document.getElementById("outpt").innerHTML="nooo";
+}*/
+
+
+
+  var arr = [];
+function rannum() {
+
+  while (arr.length < 7) {
+    var rm = Math.floor(Math.random() * 20) + 1;
+    if (arr.indexOf(rm) === -1) arr.push(rm);
+  }
+  document.getElementById("rmm").innerHTML = arr;
+}
+var tl=0 ;
+var c=0;
+var atm=4;
+function checknum() {
+
+  var strl = Number(document.getElementById("sttg").value);
+  //document.getElementById("stm").innerHTML=strl;
+  if (strl > 20) {
+    document.getElementById("ck").style.color="red";
+    document.getElementById("ck").innerHTML = "<b>Please enter valid number</b>";
+    document.getElementById("sttg").value = '';
+  } else {
+    document.getElementById("ck").innerHTML = "";
+    var chek = arr.includes(strl);
+    document.getElementById("sttg").value = '';
+
+    //document.getElementById("lok").innerHTML=chek;
+    if (chek === false) {
+      tl += strl;
+      c += 1;
+      document.getElementById("atmp").innerHTML="<b>Attempts left:</b> " + atm;
+      document.getElementById("pp").innerHTML = "Your Score Till Now: "+tl;
+      //document.getElementById("yp").style.visibility='hidden';
+        //document.getElementById("np").style.visibility='hidden';
+
+      atm-=1;
+      if (c === 5) {
+        document.getElementById("pp").innerHTML = "<b>woo! woo! Your final score is</b> " + tl;
+        document.getElementById("sttg").disabled=true;
+        document.getElementById("ply").innerHTML="Do u wwant to play!!"
+        //document.getElementById("yp").style.visibility='visible';
+        //document.getElementById("np").style.visibility='visible';
+
+      }
+      // document.getElementById("pp").innerHTML = tl;
+      //document.getElementById("plp").innerHTML = c;
+
+    } else {
+      document.getElementById("pp").innerHTML = "OOPS! You entered a bad number <br>  <b>your final score is</b> " + tl;
+      document.getElementById("sttg").disabled = true;
+      document.getElementById("atmp").innerHTML="<b>Attempts left: 0</b>";
+      document.getElementById("yp").style.visibility='visible';
+      document.getElementById("np").style.visibility='visible';
+
+    }
+
+  }
+}
+
+function plyno() {
+  alert("Hope You Like this Game.Thankyou for playing")
+  document.location.r
+
+}
